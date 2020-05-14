@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* HEADER STYLES */
@@ -22,14 +29,25 @@ header h1 span {
 }
 
 header h2 {
-    color: #bdc3c7;
     font-weight: 300;
+    color: #bdc3c7;
+    opacity: 0;
+    animation: fadeIn 1s ease-in 0.2s forwards;
+}
+
+@keyframes fadeIn{
+    100% {
+        opacity: 1;
+    }
 }
 
 /* FORM STYLES */
 .form {
     width: 800px;
     margin: 50px auto 20px;
+    border-bottom: 1px solid #34495e;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in 0.5s forwards;
 }
 
 #todoInput {
@@ -37,10 +55,9 @@ header h2 {
     height: 60px;
     background: none;
     border: none;
-    border-bottom: 1px solid #34495e;
     outline: none;
+    padding: 0 20px;
     font: 300 28px 'Ubuntu', sans-serif;
-    padding: 20px;
     color: #34495e;
 }
 
@@ -48,6 +65,8 @@ header h2 {
 .list {
     width: 800px;
     margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in 1s forwards;
 }
 
 .task {
@@ -83,4 +102,23 @@ li span {
 
 li span:hover {
     color: #e74c3c;
+}
+
+@media (max-width: 860px){
+    .form {
+        width: 100%;
+    }
+
+    .list {
+        width: 80vw;
+        margin-left: 20px;
+    }
+
+    .task {
+        margin-left: 30px;
+    }
+
+    #todoInput {
+        width: 60%;
+    }
 }
