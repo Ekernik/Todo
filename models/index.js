@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/todo-api', {
+const mongoUrl = 'mongodb+srv://developer:dbpasons97@yelpcamp-ezsoo.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
